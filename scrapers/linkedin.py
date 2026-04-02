@@ -12,7 +12,11 @@ class LinkedInScraper(BaseScraper):
         self.page.goto(
             f'{self.BASE_URL}?keywords={keyword}&location={location}'
         )
-        self.page.get_by_role('button', name='Fechar').click()
+
+        try:
+            self.page.get_by_role('button', name='Fechar').click()
+        except TimeoutError:
+            pass
 
         # Aplica o filtro 'Última semana'
         self.wait_and_click(self.page.get_by_role(
