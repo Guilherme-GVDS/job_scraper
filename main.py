@@ -1,11 +1,11 @@
 from output.excel_exporter import export_to_excel
 from playwright_client import PlaywrightClient
 # from scrapers.linkedin import LinkedInScraper
-from scrapers.catho import CathoScraper
-# from scrapers.infojobs import InfoJobsScraper
+# from scrapers.catho import CathoScraper
+from scrapers.infojobs import InfoJobsScraper
 # from scrapers.indeed import IndeedScraper
 
-SCRAPERS = [CathoScraper]
+SCRAPERS = [InfoJobsScraper]
 
 
 def run(keyword: str, location: str):
